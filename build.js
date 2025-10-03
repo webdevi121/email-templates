@@ -30,7 +30,42 @@ const template = `
                             <div>The Waterman Centre Level 2 UL40/1341</div>
                             <div>Dandenong Road, Chadstone VIC 3148, Aus</div>
                         </div>
-                        <!-- Buttons omitted for brevity -->
+<table cellpadding="0" cellspacing="0" border="0" style="
+                                margin-top: 7px;
+                                font-size: 12px;
+                                white-space: nowrap;
+                            ">
+                            <tbody>
+                                <tr>
+                                    <td align="center" bgcolor="#ffffff" style="
+                                            border: 1px solid #e20046;
+                                            border-radius: 4px;
+                                            padding: 8px 14px;
+                                        ">
+                                        <a href="https://infusion121.com.au/support/#submitTicketSection" style="
+                                                color: #e20046;
+                                                text-decoration: none;
+                                                /* font-weight: bold; */
+                                                font-size: 11px;
+                                                display: inline-block;
+                                            ">Support Ticket</a>
+                                    </td>
+                                    <td style="width: 10px"></td>
+                                    <td align="center" bgcolor="#e20046" style="
+                                            border-radius: 4px;
+                                            padding: 8px 14px;
+                                        ">
+                                        <a href="https://infusion121.zohobookings.com/#/customer/infusion121" style="
+                                                color: #ffffff;
+                                                text-decoration: none;
+                                                /* font-weight: bold; */
+                                                font-size: 11px;
+                                                display: inline-block;
+                                            ">Book a Meeting</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </td>
 
                     <!-- Right Column -->
