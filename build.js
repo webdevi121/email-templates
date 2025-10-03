@@ -37,31 +37,16 @@ const template = `
                             ">
                             <tbody>
                                 <tr>
-                                    <td align="center" bgcolor="#ffffff" style="
-                                            border: 1px solid #e20046;
-                                            border-radius: 4px;
-                                            padding: 8px 14px;
-                                        ">
-                                        <a href="https://infusion121.com.au/support/#submitTicketSection" style="
-                                                color: #e20046;
-                                                text-decoration: none;
-                                                /* font-weight: bold; */
-                                                font-size: 11px;
-                                                display: inline-block;
-                                            ">Support Ticket</a>
+                                    <td>
+                                        <a href="https://infusion121.com.au/support/#submitTicketSection">
+                                            <img src="https://infusion121.com.au/email-signature/cta-1.png" alt="" width="110">
+                                        </a>
                                     </td>
-                                    <td style="width: 10px"></td>
-                                    <td align="center" bgcolor="#e20046" style="
-                                            border-radius: 4px;
-                                            padding: 8px 14px;
-                                        ">
-                                        <a href="https://infusion121.zohobookings.com/#/customer/infusion121" style="
-                                                color: #ffffff;
-                                                text-decoration: none;
-                                                /* font-weight: bold; */
-                                                font-size: 11px;
-                                                display: inline-block;
-                                            ">Book a Meeting</a>
+                                    <td style="width: 2px"></td>
+                                    <td>
+                                        <a href="https://infusion121.zohobookings.com/#/customer/infusion121">
+                                            <img src="https://infusion121.com.au/email-signature/cta-2.png" alt="" width="113">
+                                        </a>
                                     </td>
                                 </tr>
                             </tbody>
