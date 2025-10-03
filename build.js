@@ -90,14 +90,14 @@ const people = [
         FIRSTNAME: "Sarniel",
         LASTNAME: "Morgia",
         ROLE: "Web Developer",
-        EMAIL: "webdevelopment@infusion121.com",
+        EMAIL: "niel.m@infusion121.com",
         TELEPHONE: "1300 108 507",
     },
     {
         FIRSTNAME: "Janine",
         LASTNAME: "Sebastian",
         ROLE: "Agency Traffic Manager",
-        EMAIL: "marketing@infusion121.com",
+        EMAIL: "janine.s@infusion121.com",
         TELEPHONE: "1300 108 507",
     },
     {
@@ -119,7 +119,7 @@ const people = [
         FIRSTNAME: "Apurva",
         LASTNAME: "Sah",
         ROLE: "Paid Marketing Specialist",
-        EMAIL: "adwords@infusion121.com",
+        EMAIL: "apurva.s@infusion121.com",
         TELEPHONE: "1300 108 507",
     },
 ];
