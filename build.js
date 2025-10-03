@@ -91,28 +91,28 @@ const people = [
         LASTNAME: "Morgia",
         ROLE: "Web Developer",
         EMAIL: "webdevelopment@infusion121.com",
-        TELEPHONE: "03 7024 6091",
+        TELEPHONE: "1300 108 507",
     },
     {
         FIRSTNAME: "Janine",
         LASTNAME: "Sebastian",
         ROLE: "Agency Traffic Manager",
         EMAIL: "marketing@infusion121.com",
-        TELEPHONE: "03 7024 6091",
+        TELEPHONE: "1300 108 507",
     },
     {
         FIRSTNAME: "Ram",
         LASTNAME: "Zabate",
         ROLE: "Marketing Co-Ordinator",
         EMAIL: "ram.z@infusion121.com",
-        TELEPHONE: "03 7024 6091",
+        TELEPHONE: "1300 108 507",
     },
     {
         FIRSTNAME: "Brian",
         LASTNAME: "Hanna",
         ROLE: "Founder and CEO",
         EMAIL: "brianh@infusion121.com",
-        TELEPHONE: "03 7024 6091",
+        TELEPHONE: "1300 108 507",
         PHONE: "0438 26 29 27",
     },
     {
@@ -120,7 +120,7 @@ const people = [
         LASTNAME: "Sah",
         ROLE: "Paid Marketing Specialist",
         EMAIL: "adwords@infusion121.com",
-        TELEPHONE: "03 7024 6091",
+        TELEPHONE: "1300 108 507",
     },
 ];
 
