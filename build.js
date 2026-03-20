@@ -23,12 +23,27 @@ const template = `
                         <div style="font-size: 16px; color: #0a2d2d; white-space: nowrap;">
                             {{ROLE}}
                         </div>
+                        <div style="height: 10px"></div>
                         <div style="margin-top: 1px; font-weight: bold; color: #e20046;">
                             Main Office
                         </div>
                         <div style="line-height: 17px">
                             <div>The Waterman Centre Level 2 UL40/1341</div>
                             <div>Dandenong Road, Chadstone VIC 3148, Aus</div>
+                        </div>
+                        <div
+                            style="
+                                margin-top: 1px;
+                                font-weight: bold;
+                                color: #e20046;
+                            "
+                        >
+                            CBD
+                        </div>
+                        <div style="line-height: 17px">
+                            <div>
+                                Level 2, 260 Collins Street, Melbourne 3000
+                            </div>
                         </div>
 <table cellpadding="0" cellspacing="0" border="0" style="
                                 margin-top: 7px;
@@ -58,6 +73,7 @@ const template = `
                         <a href="https://infusion121.com.au" target="_blank">
                             <img src="https://infusion121.com.au/email-signature/infusion121.png" alt="Infusion121" width="191" style="display: block; border: 0; outline: none; text-decoration: none;" />
                         </a>
+                        <div style="height: 10px"></div>
 
                         <table cellpadding="0" cellspacing="0" border="0" style="margin-top: 6px; font-size: 12px; color: #0a2d2d; line-height: 19px; white-space: nowrap;">
                             <tbody>
@@ -141,6 +157,35 @@ const people = [
         ROLE: "Paid Marketing Specialist",
         EMAIL: "apurva.s@infusion121.com",
         TELEPHONE: "1300 108 507",
+    },
+    {
+        FIRSTNAME: "Apurva",
+        LASTNAME: "Sah",
+        ROLE: "Paid Marketing Specialist",
+        EMAIL: "apurva.s@infusion121.com",
+        TELEPHONE: "1300 108 507",
+    },
+    {
+        FIRSTNAME: "Alok",
+        LASTNAME: "Prabhakar",
+        ROLE: "Full Stack Developer",
+        EMAIL: "alok.p@infusion121.com",
+        TELEPHONE: "1300 108 507",
+    },
+    {
+        FIRSTNAME: "Bal",
+        LASTNAME: "Singh",
+        ROLE: "Full Stack Developer",
+        EMAIL: "bal.s@infusion121.com",
+        TELEPHONE: "1300 108 507",
+    },
+    {
+        FIRSTNAME: "Brian",
+        LASTNAME: "Hanna",
+        ROLE: "Senior Marketing Strategist",
+        EMAIL: "brianh@infusion121.com",
+        TELEPHONE: "1300 108 507",
+        PHONE: "0438 26 29 27",
     },
 ];
 
