@@ -5,7 +5,7 @@ const path = require("path");
 const distDir = path.join(__dirname, "dist");
 if (!fs.existsSync(distDir)) fs.mkdirSync(distDir);
 
-// Template HTML (replace {{PHONE && ...}} with {{PHONE_BLOCK}})
+// Template HTML
 const template = `
 <html>
     <head>
@@ -24,6 +24,7 @@ const template = `
                             {{ROLE}}
                         </div>
                         <div style="height: 10px"></div>
+
                         <div style="margin-top: 1px; font-weight: bold; color: #e20046;">
                             Main Office
                         </div>
@@ -31,68 +32,45 @@ const template = `
                             <div>The Waterman Centre Level 2 UL40/1341</div>
                             <div>Dandenong Road, Chadstone VIC 3148, Aus</div>
                         </div>
-                        <div
-                            style="
-                                margin-top: 1px;
-                                font-weight: bold;
-                                color: #e20046;
-                            "
-                        >
+
+                        <div style="margin-top: 1px; font-weight: bold; color: #e20046;">
                             CBD
                         </div>
                         <div style="line-height: 17px">
-                            <div>
-                                Level 2, 260 Collins Street, Melbourne 3000
-                            </div>
+                            <div>Level 2, 260 Collins Street, Melbourne 3000</div>
                         </div>
-<table cellpadding="0" cellspacing="0" border="0" style="
-                                margin-top: 7px;
-                                font-size: 12px;
-                                white-space: nowrap;
-                            ">
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <a href="https://infusion121.com.au/support/#submitTicketSection">
-                                            <img src="https://infusion121.com.au/email-signature/cta-1.png" alt="" width="102">
-                                        </a>
-                                    </td>
-                                    <td style="width: 7px"></td>
-                                    <td>
-                                        <a href="https://infusion121.zohobookings.com/#/customer/infusion121">
-                                            <img src="https://infusion121.com.au/email-signature/cta-2.png" alt="" width="105">
-                                        </a>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+
+                        {{CTA_BLOCK}}
+
                     </td>
 
                     <!-- Right Column -->
                     <td valign="top" width="230" style="border-left: 1px solid #cccccc; padding-left: 10px; white-space: nowrap;">
                         <a href="https://infusion121.com.au" target="_blank">
-                            <img src="https://infusion121.com.au/email-signature/infusion121.png" alt="Infusion121" width="191" style="display: block; border: 0; outline: none; text-decoration: none;" />
+                            <img src="https://infusion121.com.au/email-signature/infusion121.png" alt="Infusion121" width="191" style="display: block; border: 0;" />
                         </a>
+
                         <div style="height: 10px"></div>
 
                         <table cellpadding="0" cellspacing="0" border="0" style="margin-top: 6px; font-size: 12px; color: #0a2d2d; line-height: 19px; white-space: nowrap;">
                             <tbody>
                                 <tr>
                                     <td style="padding-right: 8px">
-                                        <img src="https://infusion121.com.au/email-signature/icon-envelop.png" alt="Email" width="17" height="17" style="display: block; border: 0" />
+                                        <img src="https://infusion121.com.au/email-signature/icon-envelop.png" width="17" />
                                     </td>
                                     <td>
-                                        <a href="mailto:{{EMAIL}}" style="color: #0a2d2d; text-decoration: none; font-size: 12px; white-space: nowrap;">
+                                        <a href="mailto:{{EMAIL}}" style="color: #0a2d2d; text-decoration: none;">
                                             {{EMAIL}}
                                         </a>
                                     </td>
                                 </tr>
+
                                 <tr>
                                     <td style="padding-right: 8px">
-                                        <img src="https://infusion121.com.au/email-signature/icon-telephone.png" alt="Phone" width="17" height="17" style="display: block; border: 0" />
+                                        <img src="https://infusion121.com.au/email-signature/icon-telephone.png" width="17" />
                                     </td>
                                     <td>
-                                        <a href="tel:{{TELEPHONE}}" style="color: #0a2d2d; text-decoration: none; font-size: 12px; white-space: nowrap;">
+                                        <a href="tel:{{TELEPHONE}}" style="color: #0a2d2d; text-decoration: none;">
                                             {{TELEPHONE}}
                                         </a>
                                     </td>
@@ -102,16 +80,17 @@ const template = `
 
                                 <tr>
                                     <td style="padding-right: 8px">
-                                        <img src="https://infusion121.com.au/email-signature/icon-globe-2.png" alt="Website" width="17" height="17" style="display: block; border: 0" />
+                                        <img src="https://infusion121.com.au/email-signature/icon-globe-2.png" width="17" />
                                     </td>
                                     <td>
-                                        <a href="https://www.infusion121.com.au" style="color: #0a2d2d; text-decoration: none; font-size: 12px; white-space: nowrap;">
+                                        <a href="https://www.infusion121.com.au" style="color: #0a2d2d; text-decoration: none;">
                                             www.infusion121.com.au
                                         </a>
                                     </td>
                                 </tr>
                             </tbody>
                         </table>
+
                     </td>
                 </tr>
             </tbody>
@@ -128,6 +107,7 @@ const people = [
         ROLE: "Web Developer",
         EMAIL: "niel.m@infusion121.com",
         TELEPHONE: "1300 108 507",
+        HAS_CTA1: true,
     },
     {
         FIRSTNAME: "Janine",
@@ -135,6 +115,7 @@ const people = [
         ROLE: "Agency Traffic Manager",
         EMAIL: "janine.s@infusion121.com",
         TELEPHONE: "1300 108 507",
+        HAS_CTA1: true,
     },
     {
         FIRSTNAME: "Ram",
@@ -142,6 +123,7 @@ const people = [
         ROLE: "Marketing Co-Ordinator",
         EMAIL: "ram.z@infusion121.com",
         TELEPHONE: "1300 108 507",
+        HAS_CTA1: true,
     },
     {
         FIRSTNAME: "Brian",
@@ -150,6 +132,7 @@ const people = [
         EMAIL: "brianh@infusion121.com",
         TELEPHONE: "1300 108 507",
         PHONE: "0438 26 29 27",
+        HAS_CTA1: true,
     },
     {
         FIRSTNAME: "Apurva",
@@ -157,6 +140,7 @@ const people = [
         ROLE: "Paid Marketing Specialist",
         EMAIL: "apurva.s@infusion121.com",
         TELEPHONE: "1300 108 507",
+        HAS_CTA1: true,
     },
     {
         FIRSTNAME: "Alok",
@@ -164,6 +148,7 @@ const people = [
         ROLE: "Full Stack Developer",
         EMAIL: "alok.p@infusion121.com",
         TELEPHONE: "1300 108 507",
+        HAS_CTA1: true,
     },
     {
         FIRSTNAME: "Bal",
@@ -171,6 +156,7 @@ const people = [
         ROLE: "Full Stack Developer",
         EMAIL: "bal.s@infusion121.com",
         TELEPHONE: "1300 108 507",
+        HAS_CTA1: true,
     },
     {
         FIRSTNAME: "Brian",
@@ -179,6 +165,7 @@ const people = [
         EMAIL: "brian@infusion121.com",
         TELEPHONE: "1300 108 507",
         PHONE: "0438 26 29 27",
+        HAS_CTA1: false,
     },
 ];
 
@@ -192,14 +179,47 @@ people.forEach((person) => {
     const phoneBlock = person.PHONE
         ? `
 <tr>
-    <td><img src="https://infusion121.com.au/email-signature/icon-phone.png" alt="Phone" width="17" height="17" style="display: block; border: 0" /></td>
+    <td><img src="https://infusion121.com.au/email-signature/icon-phone.png" width="17" /></td>
     <td>
-        <a href="tel:${person.PHONE.replace(/\s+/g, "")}" style="color: #0a2d2d; text-decoration: none; font-size: 12px; white-space: nowrap;">
+        <a href="tel:${person.PHONE.replace(/\s+/g, "")}" style="color: #0a2d2d; text-decoration: none;">
             ${person.PHONE}
         </a>
     </td>
 </tr>`
         : "";
+
+    // CTA block
+    const ctaBlock = person.HAS_CTA1
+        ? `
+<table cellpadding="0" cellspacing="0" border="0" style="margin-top: 7px; font-size: 12px; white-space: nowrap;">
+    <tbody>
+        <tr>
+            <td>
+                <a href="https://infusion121.com.au/support/#submitTicketSection">
+                    <img src="https://infusion121.com.au/email-signature/cta-1.png" width="102">
+                </a>
+            </td>
+            <td style="width: 7px"></td>
+            <td>
+                <a href="https://infusion121.zohobookings.com/#/customer/infusion121">
+                    <img src="https://infusion121.com.au/email-signature/cta-2.png" width="105">
+                </a>
+            </td>
+        </tr>
+    </tbody>
+</table>`
+        : `
+<table cellpadding="0" cellspacing="0" border="0" style="margin-top: 7px; font-size: 12px; white-space: nowrap; width: 100%;">
+    <tbody>
+        <tr>
+            <td>
+                <a href="https://infusion121.zohobookings.com/#/customer/infusion121">
+                    <img src="https://infusion121.com.au/email-signature/book-a-meeting-btn.png" style="width: 234px;">
+                </a>
+            </td>
+        </tr>
+    </tbody>
+</table>`;
 
     // Replace placeholders
     for (const key in person) {
@@ -207,11 +227,11 @@ people.forEach((person) => {
     }
 
     html = html.replace(/{{PHONE_BLOCK}}/g, phoneBlock);
+    html = html.replace(/{{CTA_BLOCK}}/g, ctaBlock);
 
-    // Base filename from FIRSTNAME only
+    // Filename logic
     const baseName = person.FIRSTNAME.toLowerCase();
 
-    // Handle duplicates
     if (!filenameCount[baseName]) {
         filenameCount[baseName] = 1;
     } else {
@@ -223,7 +243,6 @@ people.forEach((person) => {
 
     const filename = `email-signature-${baseName}${suffix}.html`;
 
-    // Write file
     fs.writeFileSync(path.join(distDir, filename), html, "utf8");
 
     console.log(`✅ Generated: ${filename}`);
