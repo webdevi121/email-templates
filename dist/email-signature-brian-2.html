@@ -1,12 +1,4 @@
-const fs = require("fs");
-const path = require("path");
 
-// Create dist folder if it doesn't exist
-const distDir = path.join(__dirname, "dist");
-if (!fs.existsSync(distDir)) fs.mkdirSync(distDir);
-
-// Template HTML (replace {{PHONE && ...}} with {{PHONE_BLOCK}})
-const template = `
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -18,10 +10,10 @@ const template = `
                     <!-- Left Column -->
                     <td valign="top" width="230" style="padding-right: 10px; padding-top: 7px; white-space: nowrap;">
                         <div style="font-size: 25px; font-weight: bold; color: #0a2d2d; padding-bottom: 3px; white-space: nowrap;">
-                            {{FIRSTNAME}} {{LASTNAME}}
+                            Brian Hanna
                         </div>
                         <div style="font-size: 16px; color: #0a2d2d; white-space: nowrap;">
-                            {{ROLE}}
+                            Senior Marketing Strategist
                         </div>
                         <div style="height: 10px"></div>
                         <div style="margin-top: 1px; font-weight: bold; color: #e20046;">
@@ -82,8 +74,8 @@ const template = `
                                         <img src="https://infusion121.com.au/email-signature/icon-envelop.png" alt="Email" width="17" height="17" style="display: block; border: 0" />
                                     </td>
                                     <td>
-                                        <a href="mailto:{{EMAIL}}" style="color: #0a2d2d; text-decoration: none; font-size: 12px; white-space: nowrap;">
-                                            {{EMAIL}}
+                                        <a href="mailto:brianh@infusion121.com" style="color: #0a2d2d; text-decoration: none; font-size: 12px; white-space: nowrap;">
+                                            brianh@infusion121.com
                                         </a>
                                     </td>
                                 </tr>
@@ -92,13 +84,21 @@ const template = `
                                         <img src="https://infusion121.com.au/email-signature/icon-telephone.png" alt="Phone" width="17" height="17" style="display: block; border: 0" />
                                     </td>
                                     <td>
-                                        <a href="tel:{{TELEPHONE}}" style="color: #0a2d2d; text-decoration: none; font-size: 12px; white-space: nowrap;">
-                                            {{TELEPHONE}}
+                                        <a href="tel:1300 108 507" style="color: #0a2d2d; text-decoration: none; font-size: 12px; white-space: nowrap;">
+                                            1300 108 507
                                         </a>
                                     </td>
                                 </tr>
 
-                                {{PHONE_BLOCK}}
+                                
+<tr>
+    <td><img src="https://infusion121.com.au/email-signature/icon-phone.png" alt="Phone" width="17" height="17" style="display: block; border: 0" /></td>
+    <td>
+        <a href="tel:0438262927" style="color: #0a2d2d; text-decoration: none; font-size: 12px; white-space: nowrap;">
+            0438 26 29 27
+        </a>
+    </td>
+</tr>
 
                                 <tr>
                                     <td style="padding-right: 8px">
@@ -118,113 +118,3 @@ const template = `
         </table>
     </body>
 </html>
-`;
-
-// Team data
-const people = [
-    {
-        FIRSTNAME: "Sarniel",
-        LASTNAME: "Morgia",
-        ROLE: "Web Developer",
-        EMAIL: "niel.m@infusion121.com",
-        TELEPHONE: "1300 108 507",
-    },
-    {
-        FIRSTNAME: "Janine",
-        LASTNAME: "Sebastian",
-        ROLE: "Agency Traffic Manager",
-        EMAIL: "janine.s@infusion121.com",
-        TELEPHONE: "1300 108 507",
-    },
-    {
-        FIRSTNAME: "Ram",
-        LASTNAME: "Zabate",
-        ROLE: "Marketing Co-Ordinator",
-        EMAIL: "ram.z@infusion121.com",
-        TELEPHONE: "1300 108 507",
-    },
-    {
-        FIRSTNAME: "Brian",
-        LASTNAME: "Hanna",
-        ROLE: "Founder and CEO",
-        EMAIL: "brianh@infusion121.com",
-        TELEPHONE: "1300 108 507",
-        PHONE: "0438 26 29 27",
-    },
-    {
-        FIRSTNAME: "Apurva",
-        LASTNAME: "Sah",
-        ROLE: "Paid Marketing Specialist",
-        EMAIL: "apurva.s@infusion121.com",
-        TELEPHONE: "1300 108 507",
-    },
-    {
-        FIRSTNAME: "Alok",
-        LASTNAME: "Prabhakar",
-        ROLE: "Full Stack Developer",
-        EMAIL: "alok.p@infusion121.com",
-        TELEPHONE: "1300 108 507",
-    },
-    {
-        FIRSTNAME: "Bal",
-        LASTNAME: "Singh",
-        ROLE: "Full Stack Developer",
-        EMAIL: "bal.s@infusion121.com",
-        TELEPHONE: "1300 108 507",
-    },
-    {
-        FIRSTNAME: "Brian",
-        LASTNAME: "Hanna",
-        ROLE: "Senior Marketing Strategist",
-        EMAIL: "brianh@infusion121.com",
-        TELEPHONE: "1300 108 507",
-        PHONE: "0438 26 29 27",
-    },
-];
-
-// Track filenames to avoid duplicates
-const filenameCount = {};
-
-people.forEach((person) => {
-    let html = template;
-
-    // PHONE block
-    const phoneBlock = person.PHONE
-        ? `
-<tr>
-    <td><img src="https://infusion121.com.au/email-signature/icon-phone.png" alt="Phone" width="17" height="17" style="display: block; border: 0" /></td>
-    <td>
-        <a href="tel:${person.PHONE.replace(/\s+/g, "")}" style="color: #0a2d2d; text-decoration: none; font-size: 12px; white-space: nowrap;">
-            ${person.PHONE}
-        </a>
-    </td>
-</tr>`
-        : "";
-
-    // Replace placeholders
-    for (const key in person) {
-        html = html.replace(new RegExp(`{{${key}}}`, "g"), person[key]);
-    }
-
-    html = html.replace(/{{PHONE_BLOCK}}/g, phoneBlock);
-
-    // Base filename from FIRSTNAME only
-    const baseName = person.FIRSTNAME.toLowerCase();
-
-    // Handle duplicates
-    if (!filenameCount[baseName]) {
-        filenameCount[baseName] = 1;
-    } else {
-        filenameCount[baseName]++;
-    }
-
-    const suffix =
-        filenameCount[baseName] > 1 ? `-${filenameCount[baseName]}` : "";
-
-    const filename = `email-signature-${baseName}${suffix}.html`;
-
-    // Write file
-    fs.writeFileSync(path.join(distDir, filename), html, "utf8");
-
-    console.log(`✅ Generated: ${filename}`);
-});
