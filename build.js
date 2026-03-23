@@ -176,7 +176,7 @@ const people = [
         FIRSTNAME: "Brian",
         LASTNAME: "Hanna",
         ROLE: "Senior Marketing Strategist",
-        EMAIL: "brianh@infusion121.com",
+        EMAIL: "brian@infusion121.com",
         TELEPHONE: "1300 108 507",
         PHONE: "0438 26 29 27",
     },
