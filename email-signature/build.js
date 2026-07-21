@@ -167,6 +167,15 @@ const people = [
         PHONE: "0438 26 29 27",
         HAS_CTA1: false,
     },
+    {
+        FIRSTNAME: "John",
+        LASTNAME: "Yarte",
+        ROLE: "Digital Marketing Specialist",
+        EMAIL: "john.c@infusion121.com",
+        TELEPHONE: "1300 108 507",
+        PHONE: "0438 26 29 27",
+        HAS_CTA1: false,
+    },
 ];
 
 // Track filenames to avoid duplicates
